@@ -49,9 +49,9 @@
 
 <div id="bottom">
     <div id="uibtns">
-        <button id="BankerBet">Banker</button>
-        <button id="PlayerBet">Player</button>
-        <button id="TieBet">Tie</button>
+        <button id="bankerBetButton">Banker</button>
+        <button id="playerBetButton">Player</button>
+        <button id="tieBetButton">Tie</button>
         <form inputmode="numeric"></form>
 </div>
 </div> 
@@ -73,15 +73,15 @@ const audio = new Audio("/Assets/shuffling-cards-1.wav");
 const buttons = document.querySelectorAll("#shuffleButton");
 
 buttons.forEach(button => {
-  button.addEventListener("click", () => {
+    button.addEventListener("click", () => {
     audio.play();
-  });
+    });
 });
 //Added in in-line shuffling noise to the cards. src="https://www.soundjay.com/card-sounds-1.html#google_vignette"
 </script></button>
 <!-- This should invoke a shuffling noise to help the gambler experience a shuffling noise.  -->
-        <button>Deal</button>
-        <button>Clear All</button>
+        <button id="deal">Deal</button>
+        <button id="clearAll">Clear All</button>
     </div>
     <div id="links">
             <!-- <a href="./AboutTheGame.html">About the Game</a></button> -->
