@@ -59,7 +59,17 @@ Stretch Goals:
 -Balance updates and storages on local storage or user profiles
 -Shuffle button would produce a gif and shuffle noise to work in conjunction.
         Balance -->
-        <button id="shuffleButton">Shuffle</button>
+        <button id="shuffleButton">Shuffle<script type="text/javascript">
+const audio = new Audio("/Assets/shuffling-cards-1.wav");
+const buttons = document.querySelectorAll("#shuffleButton");
+
+buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    audio.play();
+  });
+});
+//Added in in-line shuffling noise to the cards. src="https://www.soundjay.com/card-sounds-1.html#google_vignette"
+</script></button>
 <!-- This should invoke a shuffling noise to help the gambler experience a shuffling noise.  -->
         <button>Deal</button>
         <button>Clear All</button>

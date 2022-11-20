@@ -1,9 +1,4 @@
 
-
-
-
-
-
 // //Build initial Class 
 // class cards{
 // 	constructor(name,age){
