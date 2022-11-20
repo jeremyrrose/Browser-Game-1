@@ -7,13 +7,35 @@
     <script src="card.js"></script>
     <script src="index.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css"/>
-    <title>Document</title>
+    <title>Slam's Baccarat</title>
+<div id="decoration">
+    <h1 class="casinoName">
+        <span style="color:black">&spades;</span>
+        <span style="color:red">&hearts;</span>
+        <span style="color:black"> &clubs;</span>
+        <span style="color:red"> &diams;</span>
+        <span style="color:black"> Baccarat Sim</span>
+        <span style="color:black">&spades;</span>
+        <span style="color:red">&hearts;</span>
+        <span style="color:black"> &clubs;</span>
+        <span style="color:red"> &diams;</span>
+    </h1>
+    </div>
 </head>
 <body>
 <div id="container">
 <div id="right">Banker</div>
-<div id="left">player</div>
-<div id="mid">game</div>
+<div id="left">Player</div>
+<div id="mid">Payouts
+        <div id="bettingAmounts">
+        <button id="white"><img src="assets/White.jpg" alt="White $1"></button>
+        <button id="blue"><img src="assets/Blue.jpg" alt="Blue $5"></button>
+        <button id="green"><img src="assets/Green.jpg" alt="Green $25"></button>
+        <button id="red"><img src="assets/Red.jpg" alt="Red $50"></button>
+        <button id="black"><img src="assets/Black.jpg" alt="Black $100"></button>
+    <label for="amountWager">Amount Wagered:</label> <input type="int" id="firstname">
+    </div>
+</div>
 
 
 <div id="bottom">
@@ -21,28 +43,38 @@
         <button id="BankerBet">Banker</button>
         <button id="PlayerBet">Player</button>
         <button id="TieBet">Tie</button>
-        <button>Deal</button>
-        <button>Clear All</button>
-    </div>
-    <div id="bettingAmounts">
-        <button id="white"><img src="assets/White.jpg"><p>$1</p></button>
-        <button id="blue"><img src="assets/Blue.jpg">$5</button>
-        <button id="green"><img src="assets/Green.jpg">$25</button>
-        <button id="red"><img src="assets/Red.jpg">$50</button>
-        <button id="black"><img src="assets/Black.jpg">$100</button>
-        <input form="int"></input>
-    </div>
-    <div id="links">
-        <ul>Helpful Links</ul>
-        <li><a href="https://www.wikihow.com/Play-Baccarat">wikihow</a></li>    
-        <li><img src="/Assets/BaccaratCardValues.png" alt="Baccarat Card Values"></li>
-        <li><img src="/Assets/Naturals.png"></li>
-        <li><iframe width="560" height="315" src="https://www.youtube.com/embed/gUbBEnDrPiU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></li>
-    
-    </div>
+        <form inputmode="numeric"></form>
 </div>
 </div> 
 
+<!-- 
+Bank or Player option radio to click.
+Gambler would want to decide on how much they want to bet per round. '
+Deal and let the round play out to see which side is great is going to be greater. Conditional statement maths. 
+Set up a boolean expression for player side wins, gambler side wins, or ties. If else statements. 
+Compute the payouts from there. Cue music and console.log(You have won. ) or console.log(You have lost)
+
+
+Stretch Goals: 
+-Balance updates and storages on local storage or user profiles
+-Shuffle button would produce a gif and shuffle noise to work in conjunction.
+        Balance -->
+        <button id="shuffleButton">Shuffle</button>
+<!-- This should invoke a shuffling noise to help the gambler experience a shuffling noise.  -->
+        <button>Deal</button>
+        <button>Clear All</button>
+    </div>
+
+    
+    <div id="links">
+        <button id="aboutTheGame">About the Game (open the console)</button>
+<p id="AdditionalLinks">Additional Links for instructions</p> 
+        <ul>Helpful Links</ul>
+        <li><a href="https://www.wikihow.com/Play-Baccarat">wikihow</a></li>    
+        <li><a href="/Assets/BaccaratCardValues.png">What are Baccarat Card Values?</a></li>
+        <li><a href=="/Assets/Naturals.png">What are Naturals?</li>
+        <li><a href="https://youtu.be/gUbBEnDrPiU">YouTube video player</a></li>
+    </div>
 
 </body>
 </html>

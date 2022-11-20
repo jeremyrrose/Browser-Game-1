@@ -2,13 +2,13 @@ body {
     background: url("/Assets/PokerBackgroundCropped.jpg");
     background-color: #cccccc;
     size: 100%;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     background-size: cover; 
 }
 
 
 div{
-    border: solid 2px red ; 
+    border: solid 5px red ; 
 }
 
 ul {
@@ -17,6 +17,7 @@ ul {
 
 #container{
     display: grid;
+    height: 500px;
     place-items: center;
 }
 #mid{
@@ -41,13 +42,38 @@ ul {
     display: flex;
     grid-column: 1 /span 3;
     grid-row: 2;
-   
 }
 #bettingAmounts{
     max-width: 5px;
     max-height: 5px;       
-    }
-/* }
+}
+.casinoName{
+    display: flex;
+    justify-content:space-between
+
+}
+
+button>img{
+    width: 25px;
+    height: 25px;
+    /* border-radius: 100%; */
+}
+#bettingAmounts button{
+    border-radius: 100%;
+    padding:  0px 0px;
+overflow: hidden;
+align-items: center;
+
+}
+
+/* span {
+    align-content: center;
+    justify-content: center;
+} */
+/* Can't align these properly.  */
+
+/* 
+
 #white {
     width: 5px;
     height: 5px;
@@ -67,4 +93,4 @@ ul {
 #black{
     width: 5px;
     height: 5px;
-} */
+}  */
