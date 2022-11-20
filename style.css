@@ -1,0 +1,70 @@
+body {
+    background: url("/Assets/PokerBackgroundCropped.jpg");
+    background-color: #cccccc;
+    size: 100%;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+
+div{
+    border: solid 2px red ; 
+}
+
+ul {
+    list-style-type: none;
+}
+
+#container{
+    display: grid;
+    place-items: center;
+}
+#mid{
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    
+}
+#left{
+    display: flex;
+    grid-column: 1;
+    grid-row: 1;
+    
+}
+#right{
+    display: flex;
+    grid-column: 3;
+    grid-row: 1;
+    
+}
+#bottom{
+    display: flex;
+    grid-column: 1 /span 3;
+    grid-row: 2;
+   
+}
+#bettingAmounts{
+    max-width: 5px;
+    max-height: 5px;       
+    }
+/* }
+#white {
+    width: 5px;
+    height: 5px;
+}
+#blue {
+    width: 5px;
+    height: 5px;
+}
+#green {
+    width: 5px;
+    height: 5px;
+}
+#red{ 
+    width: 5px;
+    height: 5px;
+}
+#black{
+    width: 5px;
+    height: 5px;
+} */
