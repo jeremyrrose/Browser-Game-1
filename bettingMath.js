@@ -1,23 +1,23 @@
-function addone(){
-    document.getElementById("#white")
-}
+// function addone(){
+//     document.getElementById("#white")
+// }
 
-function addfive(){
-    document.getElementById("#blue")
-}
+// function addfive(){
+//     document.getElementById("#blue")
+// }
 
-function addtwentyfive(){
-    document.getElementById("#green")
-}
+// function addtwentyfive(){
+//     document.getElementById("#green")
+// }
 
-function addfifty(){
-    document.getElementById("#red")
-}
+// function addfifty(){
+//     document.getElementById("#red")
+// }
 
-function addonehundred(){
-    document.getElementById("#black")
-}
+// function addonehundred(){
+//     document.getElementById("#black")
+// }
 
-function resetbet(){
+// function resetbet(){
 
-}
+// }

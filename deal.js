@@ -1,4 +1,3 @@
-let deal=
 
 
 // Psuedocode Deal Function 

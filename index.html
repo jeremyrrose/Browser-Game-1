@@ -5,35 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="card.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="index.js" defer></script>
     <script defer src="allocateWager.js"></script>
+    <script defer src="assetmanagerCopy.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
     <title>Slam's Baccarat</title>
-<div id="decoration">
-    <h1 class="casinoName">
-        <span style="color:black">&spades;</span>
-        <span style="color:red">&hearts;</span>
-        <span style="color:black"> &clubs;</span>
-        <span style="color:red"> &diams;</span>
-        <span style="color:black"> Baccarat Sim</span>
-        <span style="color:black">&spades;</span>
-        <span style="color:red">&hearts;</span>
-        <span style="color:black"> &clubs;</span>
-        <span style="color:red"> &diams;</span>
-    </h1>
-    </div>
+
 </head>
 <body>
+    <div id="decoration">
+        <h1 class="casinoName">
+            <span style="color:black">&spades;</span>
+            <span style="color:red">&hearts;</span>
+            <span style="color:black"> &clubs;</span>
+            <span style="color:red"> &diams;</span>
+            <span style="color:black"> Baccarat Sim</span>
+            <span style="color:black">&spades;</span>
+            <span style="color:red">&hearts;</span>
+            <span style="color:black"> &clubs;</span>
+            <span style="color:red"> &diams;</span>
+        </h1>
+        </div>
 <div id="container">
 
 <div id="right">Player
     <div id="playerBet"></div>
+    <div id="playerCard"></div>
+    <div id="playerValueIndicator"></div>
 </div>
 <div id="left">Banker
     <div id="bankerBet"></div>
+    <div id="bankerCard"></div>
+    <div id="bankerValueIndicator"></div>
 </div>
-<div id="mid">Payouts
-<div id="tieBet"></div>
+<div id="mid">Payouts<p id="scoreComparison"></p><div></div>
+<div id="tieBet">xx</div>
 
 
         <div id="bettingAmounts">
@@ -42,8 +52,8 @@
         <button id="green"><img src="assets/Green.jpg" alt="Green $25"></button>
         <button id="red"><img src="assets/Red.jpg" alt="Red $50"></button>
         <button id="black"><img src="assets/Black.jpg" alt="Black $100"></button>
-    <label for="amountWage">Amount Wagered:</label> <input type="number" id="amountwagered" value="0">
-    </div>
+        <label for="amountWage">Amount Wagered:</label> <input type="number" id="amountwagered" value="0">
+        </div>
 </div>
 
 
@@ -53,7 +63,7 @@
         <button id="playerBetButton">Player</button>
         <button id="tieBetButton">Tie</button>
         <form inputmode="numeric"></form>
-</div>
+    </div>
 </div> 
 
 <!-- 
@@ -68,23 +78,30 @@ Stretch Goals:
 -Balance updates and storages on local storage or user profiles
 -Shuffle button would produce a gif and shuffle noise to work in conjunction.
         Balance -->
-        <button id="shuffleButton">Shuffle<script type="text/javascript">
-const audio = new Audio("/Assets/shuffling-cards-1.wav");
-const buttons = document.querySelectorAll("#shuffleButton");
+        <button id="shuffleButton">Shuffle
+            <script type="text/javascript">
 
-buttons.forEach(button => {
-    button.addEventListener("click", () => {
-    audio.play();
-    });
-});
-//Added in in-line shuffling noise to the cards. src="https://www.soundjay.com/card-sounds-1.html#google_vignette"
-</script></button>
+const audio = new Audio("./Assets/shuffling-cards-1.wav");
+const buttons = document.getElementById("shuffleButton");
+
+buttons.addEventListener("click",function(){
+    bankercardel.innerHTML = "";
+    playercardel.innerHTML = "";
+    okprompt.remove();
+    dealbtn.disabled = false;
+audio.play();
+});</script>
+
+</button>
 <!-- This should invoke a shuffling noise to help the gambler experience a shuffling noise.  -->
         <button id="deal">Deal</button>
         <button id="clearAll">Clear All</button>
-    </div>
-    <div id="links">
+        <div id="links">
             <!-- <a href="./AboutTheGame.html">About the Game</a></button> -->
-<input type="button" onclick="location.href='./AboutTheGame.html';" value="About the Game" />
-</body>
+            <input type="button" onclick="location.href='./AboutTheGame.html';" value="About the Game" />
+        </div>
+</div>
+
+    </body>
+
 </html>
