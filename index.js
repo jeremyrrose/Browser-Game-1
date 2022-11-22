@@ -21,19 +21,12 @@ greenchipBTN.addEventListener('click', function(){
 redchipBTN.addEventListener('click', function(){
     betamount(50);
 });
-let y=null;
-
+// let y=null;
 function betamount(chipval){
     console.log("chip clicked:"+ chipval);
-    console.log(y)
-    // if (y=null){
     let x= parseInt(waggerinput.value);
-    // else{
-    //     x=
-    // }
     waggerinput.value =  x+chipval;
     y=waggerinput.value
-    console.log(y)
 }
 // function blackchipBTN(){
 // blackchipBTN.addEventListener('click',betamount(100));
