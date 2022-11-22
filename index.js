@@ -216,3 +216,4 @@ function betamount(chipval){
 // // };
 
 // // myDeck = shuffle(myDeck);
+
