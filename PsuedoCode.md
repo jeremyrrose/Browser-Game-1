@@ -1,7 +1,6 @@
-Psuedocode
+<!-- Psuedocode
 
 Allow for the gambler to choose either Banker or Player or Tie
-
 
 Set up button inputs for $1, $5, $10, $20, $50, $100, and reset 
 
@@ -18,3 +17,5 @@ Set up scoreboard to document past results from P, B, or T
 Z-index background to 0.  
 Z-index buttons to 1.
 Z-index chips to 2. 
+
+for your buttons if you wanna add easy style to them look at bootstrap buttons on w3s -->

@@ -8,8 +8,6 @@ class card{
             this.value=0;
         }
 
-
-
         if (suit == 1){
             this.suit = "hearts";
             }else if(suit == 2){
@@ -22,18 +20,20 @@ class card{
 
         // condtions for random number param from 1-13
         if (cardval <= 10 && cardval !=1){
-        this.src = `./Assets/${this.cardval}_${this.suit}.png`;
+
+            
+        this.src = `./Assets/Cards/${this.cardval}_${this.suit}.png`;
         }else if(cardval == 11){
-            this.src = `./Assets/jack_${this.suit}.png`;
+            this.src = `./Assets/Cards/jack_${this.suit}.png`;
         }
         else if(cardval == 12){
-    this.src = `./Assets/queen_${this.suit}.png`;
+    this.src = `./Assets/Cards/queen_${this.suit}.png`;
     }
     else if(cardval == 13){
-        this.src = `./Assets/king_${this.suit}.png`;
+        this.src = `./Assets/Cards/king_${this.suit}.png`;
         }
         else if(cardval == 1) {
-            this.src = `./Assets/ace_${this.suit}.png`;
+            this.src = `./Assets/Cards/ace_${this.suit}.png`;
             }
 
 
@@ -63,17 +63,47 @@ let bcard1 = null;
 let bcard2 = null;
 let pcard1 = null;
 let pcard2 = null;
-let playertotal = null;
-let bankertotal = null;
+let playerTotal = null;
+let bankerTotal = null;
 let winner = null;
 
+function totalTheHands() {
+  playerTotal = (playercard1.value + playercard2.value) % 10;
+  bankerTotal = (bankercard1.value + bankercard2.value) % 10;
+  compareHandsForNaturals();
+}
+
+function totalTheHands2() {
+  playerTotal = (playercard1.value + playercard2.value + pnewcardel.value) % 10;
+  bankerTotal = (bankercard1.value + bankercard2.value + bnewcardel.value) % 10;
+  compareHandsFinal();
+}
+function playerNatural(){
+    if (playerTotal == 8 || playerTotal == 9)
+playercardel.innerHTML = "Player has a natural! ${playerTotal}"
+}
+
+function bankerNatural(){
+    if (bankerTotal == 8 || bankerTotal == 9)
+bankercardel.innerHTML = "Banker has a natural! ${bankerTotal}"
+}
+function compareHandsForNaturals(){
+
+}
+function payOut(){
+    betAmount()+=
+}
+
+
+function compareHandsFinal(){
+
+}
 let dealbtn = document.getElementById("deal");
 let okprompt = document.createElement("button");
 okprompt.id = "okprompt";
 
 okprompt.addEventListener("click",function () {
-    if(playertotal%10 <= 5){
-
+    if(playerTotal%10 <= 5){
         playercardel.append(playercardel);
     }
     else{
@@ -81,7 +111,9 @@ okprompt.addEventListener("click",function () {
     playercardel.innerHTML = "";
     okprompt.remove();
     dealbtn.disabled = false;}
+    
 });
+
 
 dealbtn.addEventListener("click",function () {
     dealbtn.removeAttribute('disabled');
@@ -94,11 +126,8 @@ dealbtn.addEventListener("click",function () {
     bcard2=new card(randomRange(1,13),randomRange(1,4));
     pcard1=new card(randomRange(1,13),randomRange(1,4));
     pcard2=new card(randomRange(1,13),randomRange(1,4));
-//    let playertotal = pcard1.value + pcard2.value+ pnewcard.value;
 
-    
-//     // document.createElement()
-//     let bankertotal = bcard1.value + bcard2.value + bnewcard.value;
+
     bankercard1.src = bcard1.src;
     bankercard2.src = bcard2.src;
 
@@ -111,40 +140,46 @@ dealbtn.addEventListener("click",function () {
     playercardel.append(playercard1);
     playercardel.append(playercard2);
 
+
+    //    let playerTotal = pcard1.value + pcard2.value+ pnewcard.value;
+
     
-    // playertotal > bankertotal|| bankertotal < 8 
+//     // document.createElement()
+//     let bankerTotal = bcard1.value + bcard2.value + bnewcard.value;
+    
+    // playerTotal > bankerTotal|| bankerTotal < 8 
     // =================================================
-    // let playertotal = pcard1.value + pcard2.value+ pnewcard.value;
+    // let playerTotal = pcard1.value + pcard2.value+ pnewcard.value;
 
     
     // // document.createElement()
-    // let bankertotal = bcard1.value + bcard2.value + bnewcard.value;
-    // return bankertotal;
-    // return playertotal;
+    // let bankerTotal = bcard1.value + bcard2.value + bnewcard.value;
+    // return bankerTotal;
+    // return playerTotal;
     // ===============================================
-    if(playertotal == 8 || playertotal == 9 ){
-        console.log("player wins: "+ playertotal + "vs"+ bankertotal);
+    if(playerTotal == 8 || playerTotal == 9 ){
+        console.log("player wins: "+ playerTotal + "vs"+ bankerTotal);
         okprompt.innerHTML = "Player Wins";
         winner = "player";
         midel.append(okprompt);
         dealbtn.disabled = true;
 // end of game because the player wins!
     }
-    else if(bankertotal == 8 || bankertotal == 9){
-        console.log("banker wins: "+ playertotal + "vs"+ bankertotal);
+    else if(bankerTotal == 8 || bankerTotal == 9){
+        console.log("banker wins: "+ playerTotal + "vs"+ bankerTotal);
         okprompt.innerHTML = "Banker Wins";
         winner = "banker";
         midel.append(okprompt);
         dealbtn.disabled = true;
     }
-    else if(bankertotal == playertotal){
+    else if(bankerTotal == playerTotal){
         console.log("tie");
         okprompt.innerHTML = "Tie!";
         winner = "Tie";
         midel.append(okprompt);
         dealbtn.disabled = true;
     }
-    else if(playertotal%10 <= 5){
+    else if(playerTotal%10 <= 5){
         pnewcard=new card(randomRange(1,13),randomRange(1,4));
         let pnewcardel = document.createElement('img');
         pnewcardel.src = pnewcard.src;
@@ -156,7 +191,7 @@ dealbtn.addEventListener("click",function () {
         dealbtn.disabled = true;
         // okprompt.innerHTML = "?";
         // midel.append(okprompt);
-    }    else if(bankerTotal%10 <= 5|| playertotal<= 5){
+    }    else if(bankerTotal%10 <= 5|| playerTotal<= 5){
         bnewcard=new card(randomRange(1,13),randomRange(1,4));
         let bnewcardel = document.createElement('img');
         bnewcardel.src = bnewcard.src;
@@ -169,7 +204,7 @@ dealbtn.addEventListener("click",function () {
         // okprompt.innerHTML = "?";
         // midel.append(okprompt);
     }
-    // else if(playertotal%10 <= 5){
+    // else if(playerTotal%10 <= 5){
     //     bnewcard=new card(randomRange(1,13),randomRange(1,4));
     //     console.log("?");
     //     winner = "?";
@@ -185,7 +220,7 @@ dealbtn.addEventListener("click",function () {
 
     //not third pick aplicable 
 
-    // if(playertotal == 8 || playertotal == 9){
+    // if(playerTotal == 8 || playerTotal == 9){
 
     // }
 
@@ -210,7 +245,7 @@ scoreDisplay.addEventListener("click", function () {
 
 // let gameResults=document.getElementById("scoreComparison")
 // let z = document.createElement("p");
-// let string =`Player total: ${playertotal} Banker total: ${bankertotal}`;
+// let string =`Player total: ${playerTotal} Banker total: ${bankerTotal}`;
 // z.innerHTML=string;
 // gameResults.append(z);
 
