@@ -90,9 +90,9 @@ bankercardel.innerHTML = "Banker has a natural! ${bankerTotal}"
 function compareHandsForNaturals(){
 
 }
-function payOut(){
-    betAmount()+=
-}
+// function payOut(){
+//     betAmount()+=
+// }
 
 
 function compareHandsFinal(){
@@ -104,7 +104,7 @@ okprompt.id = "okprompt";
 
 okprompt.addEventListener("click",function () {
     if(playerTotal%10 <= 5){
-        playercardel.append(playercardel);
+        playercardel.append(pnewcardel);
     }
     else{
     bankercardel.innerHTML = "";
