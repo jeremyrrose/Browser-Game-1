@@ -1,3 +1,17 @@
+
+let bankercardel = document.getElementById("bankerCard");
+let playercardel = document.getElementById("playerCard");
+let midel = document.getElementById("mid");
+
+let bcard1 = null;
+let bcard2 = null;
+let pcard1 = null;
+let pcard2 = null;
+let playerTotal = null;
+let bankerTotal = null;
+let winner = null;
+let playerValueIndicator=[];
+let bankerValueIndicator=[];
 class card{
 	constructor(cardval,suit){
     	this.cardval=cardval;
@@ -54,18 +68,6 @@ function randomRange(min, max) {
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 
 }
-
-let bankercardel = document.getElementById("bankerCard");
-let playercardel = document.getElementById("playerCard");
-let midel = document.getElementById("mid");
-
-let bcard1 = null;
-let bcard2 = null;
-let pcard1 = null;
-let pcard2 = null;
-let playerTotal = null;
-let bankerTotal = null;
-let winner = null;
 
 function totalTheHands() {
   playerTotal = (playercard1.value + playercard2.value) % 10;
@@ -139,7 +141,6 @@ dealbtn.addEventListener("click",function () {
 
     playercardel.append(playercard1);
     playercardel.append(playercard2);
-
 
     //    let playerTotal = pcard1.value + pcard2.value+ pnewcard.value;
 
