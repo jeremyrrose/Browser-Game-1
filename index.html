@@ -31,13 +31,18 @@
         </div>
 <div id="container">
 
-<div id="right">Player
+<div id="left">Player
     <div id="playerBet"></div>
     <div id="playerCard"></div>
     <div id="playerValueIndicator"></div>
 </div>
+<!-- <div id="right">Player
+    <div id="playerBet"></div>
+    <div id="playerCard"></div>
+    <div id="playerValueIndicator"></div>
+</div> -->
 
-<div id="left">Banker
+<div id="right">Banker
     <div id="bankerBet"></div>
     <div id="bankerCard"></div>
     <div id="bankerValueIndicator"></div>
@@ -59,8 +64,9 @@
 
 <div id="bottom">
     <div id="uibtns">
+
+        <button id="playerBetButton">Player</button>        
         <button id="bankerBetButton">Banker</button>
-        <button id="playerBetButton">Player</button>
         <button id="tieBetButton">Tie</button>
         <form inputmode="numeric"></form>
     </div>
@@ -90,7 +96,9 @@ buttons.addEventListener("click",function(){
     okprompt.remove();
     dealbtn.disabled = false;
 audio.play();
-});</script>
+gameResults.remove(z);
+});
+</script>
 
 </button>
 <!-- This should invoke a shuffling noise to help the gambler experience a shuffling noise.  -->
