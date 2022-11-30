@@ -5,6 +5,8 @@ let midel = document.getElementById("mid");
 
 let bcard1 = null;
 let bcard2 = null;
+let pnewcard = null;
+let bnewcard = null;
 let pcard1 = null;
 let pcard2 = null;
 let playerTotal = null;
@@ -53,9 +55,8 @@ class card{
 
 
 }
-    
+
   	displayInfo(){
-        
     }
 }
 
@@ -69,25 +70,25 @@ function randomRange(min, max) {
 
 }
 
-function totalTheHands() {
-  playerTotal = (playercard1.value + playercard2.value) % 10;
-  bankerTotal = (bankercard1.value + bankercard2.value) % 10;
-  compareHandsForNaturals();
-}
+// function totalTheHands() {
+//   playerTotal = (playercard1.value + playercard2.value) % 10;
+//   bankerTotal = (bankercard1.value + bankercard2.value) % 10;
+//   compareHandsForNaturals();
+// }
 
-function totalTheHands2() {
-  playerTotal = (playercard1.value + playercard2.value + pnewcardel.value) % 10;
-  bankerTotal = (bankercard1.value + bankercard2.value + bnewcardel.value) % 10;
-  compareHandsFinal();
-}
+// function totalTheHands2() {
+//   playerTotal = (playercard1.value + playercard2.value + pnewcardel.value) % 10;
+//   bankerTotal = (bankercard1.value + bankercard2.value + bnewcardel.value) % 10;
+//   compareHandsFinal();
+// }
 function playerNatural(){
     if (playerTotal == 8 || playerTotal == 9)
-playercardel.innerHTML = "Player has a natural! ${playerTotal}"
+playercardel.innerHTML = `Player has a natural! ${playerTotal}`
 }
 
 function bankerNatural(){
     if (bankerTotal == 8 || bankerTotal == 9)
-bankercardel.innerHTML = "Banker has a natural! ${bankerTotal}"
+bankercardel.innerHTML = `Banker has a natural! ${bankerTotal}`
 }
 function compareHandsForNaturals(){
 
@@ -143,25 +144,22 @@ dealbtn.addEventListener("click",function () {
     playercardel.append(playercard2);
 
     let playerTotal = (pcard1.value + pcard2.value)%10;
-    let playerValue = document.getElementById("playerValueIndicator");debugger
-    playerValue.innerHTML("The player has a ${playerTotal}");debugger
-    console.log(playerValue);
+    let playerValue = document.getElementById("playerValueIndicator");
+    playerValue.innerHTML=`The player has a ${playerTotal}`;
+    playerNatural();
     
     let bankerTotal = (bcard1.value + bcard2.value)%10;
-    let bankerValue = document.getElementById("bankerValueIndicator");debugger
-    bankerValue.innerHTML("The banker has a ${bankerTotal}"); debugger
-    console.log(bankerValue);
+    let bankerValue = document.getElementById("bankerValueIndicator");
+    bankerValue.innerHTML=`The banker has a ${bankerTotal}`; 
+
+    bankerNatural();
+    // playerTotal = (pcard1.value + pcard2.value+ pnewcard.value)%10;
+    // playerValue.innerHTML=`The player has a ${playerTotal}`;
+
     
-    // let playerTotal = pcard1.value + pcard2.value+ pnewcard.value;
-    // let playerValue = document.getElementById("playerValueIndicator");
-    // playerValue.append.innerHTML("The player has a ${playerTotal}");
-    // console.log(playerValue)
-    
-    // let bankerTotal = bcard1.value + bcard2.value+ bnewcard.value;
-    // let bankerValue = document.getElementById("bankerValueIndicator");
-    // bankerValue.append.innerHTML("The banker has a ${bankerTotal}");
-    // console.log(bankerValue)
-    
+    // bankerTotal = (bcard1.value + bcard2.value+ bnewcard.value)%10;
+    // bankerValue.innerHTML=`The banker has a ${bankerTotal}`;
+
 //     // document.createElement()
 //     let bankerTotal = bcard1.value + bcard2.value + bnewcard.value;
     
@@ -209,7 +207,9 @@ dealbtn.addEventListener("click",function () {
         dealbtn.disabled = true;
         // okprompt.innerHTML = "?";
         // midel.append(okprompt);
-    }    else if(bankerTotal%10 <= 5|| playerTotal<= 5){
+    }    
+    
+        else if(bankerTotal%10 <= 5|| playerTotal<= 5){
         bnewcard=new card(randomRange(1,13),randomRange(1,4));
         let bnewcardel = document.createElement('img');
         bnewcardel.src = bnewcard.src;
@@ -245,6 +245,8 @@ dealbtn.addEventListener("click",function () {
 
 
 });
+let winnerDisplay=document.getElementById("winner");
+
 
 var resultsFromHand ="Player Score: ${playerTotal} VS Banker Score: ${bankerTotal}"
 function addScoreDisplay(){
@@ -269,44 +271,3 @@ scoreDisplay.addEventListener("click", function () {
 
 // function computeHands(){
 // }    
-// }
-
-// let x = document.getElementById("bankerCard");
-// let bankercardimg = document.createElement("img");
-// bankercardimg.src = demo.src;
-// x.append(bankercardimg);
-
-
-// let dealbtn = document.getElementById("deal");
-
-
-// dealbtn.addEventListener("click",function () {
-
-//     let bankercard1 = document.createElement("img");
-//     let bankercard2 = document.createElement("img");
-//     let playercard1 = document.createElement("img");
-//     let playercard2 = document.createElement("img");
-
-
-//     bankercard1.src = new card((Math.floor(Math.random() * (13 - 1 + 1)) + 1),"spades",1).src;
-//     bankercard2.src = new card((Math.floor(Math.random() * (13 - 1 + 1)) + 1),"hearts",1).src;
-
-//     playercard1.src = new card((Math.floor(Math.random() * (13 - 1 + 1)) + 1),"hearts",1).src;
-//     playercard2.src = new card((Math.floor(Math.random() * (13 - 1 + 1)) + 1),"hearts",1).src;
-
-//     bankercardel.append(bankercard1);
-//     bankercardel.append(bankercard2);
-
-//     playercardel.append(playercard1);
-//     playercardel.append(playercard2);
-
-    
-
-
-
-// });
-
-// // let x = document.getElementById("bankerCard");
-// // let bankercardimg = document.createElement("img");
-// // bankercardimg.src = demo.src;
-// // x.append(bankercardimg);
