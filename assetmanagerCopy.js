@@ -142,8 +142,25 @@ dealbtn.addEventListener("click",function () {
     playercardel.append(playercard1);
     playercardel.append(playercard2);
 
-    //    let playerTotal = pcard1.value + pcard2.value+ pnewcard.value;
-
+    let playerTotal = (pcard1.value + pcard2.value)%10;
+    let playerValue = document.getElementById("playerValueIndicator");debugger
+    playerValue.innerHTML("The player has a ${playerTotal}");debugger
+    console.log(playerValue);
+    
+    let bankerTotal = (bcard1.value + bcard2.value)%10;
+    let bankerValue = document.getElementById("bankerValueIndicator");debugger
+    bankerValue.innerHTML("The banker has a ${bankerTotal}"); debugger
+    console.log(bankerValue);
+    
+    // let playerTotal = pcard1.value + pcard2.value+ pnewcard.value;
+    // let playerValue = document.getElementById("playerValueIndicator");
+    // playerValue.append.innerHTML("The player has a ${playerTotal}");
+    // console.log(playerValue)
+    
+    // let bankerTotal = bcard1.value + bcard2.value+ bnewcard.value;
+    // let bankerValue = document.getElementById("bankerValueIndicator");
+    // bankerValue.append.innerHTML("The banker has a ${bankerTotal}");
+    // console.log(bankerValue)
     
 //     // document.createElement()
 //     let bankerTotal = bcard1.value + bcard2.value + bnewcard.value;
