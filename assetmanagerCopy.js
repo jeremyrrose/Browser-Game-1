@@ -16,9 +16,9 @@ let pnewcardel=null;
 let bnewcardel=null;
 let playerValueIndicator=[];
 let bankerValueIndicator=[];
-let gameResults=document.getElementById("scoreComparison")
-let z = document.createElement("p");
-z.innerHTML = "FIRST RENDER";
+// let gameResults=document.getElementById("scoreComparison")
+// let z = document.createElement("p");
+// z.innerHTML = "FIRST RENDER";
 class card{
 	constructor(cardval,suit){
     	this.cardval=cardval;
@@ -123,7 +123,7 @@ okprompt.addEventListener("click",function () {
 });
 
 
-dealbtn.addEventListener("click",function () {
+dealbtn.addEventListener("click",function(){
     dealbtn.removeAttribute('disabled');
     let bankercard1 = document.createElement("img");
     let bankercard2 = document.createElement("img");
@@ -262,6 +262,7 @@ dealbtn.addEventListener("click",function () {
 
 
 });
+
 let winnerDisplay=document.getElementById("winner");
 
 
