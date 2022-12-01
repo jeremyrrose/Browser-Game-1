@@ -18,6 +18,7 @@ let playerValueIndicator=[];
 let bankerValueIndicator=[];
 let gameResults=document.getElementById("scoreComparison")
 let z = document.createElement("p");
+z.innerHTML = "FIRST RENDER";
 class card{
 	constructor(cardval,suit){
     	this.cardval=cardval;
@@ -158,12 +159,9 @@ dealbtn.addEventListener("click",function () {
     bankerNatural();
 
     let gameResults=document.getElementById("scoreComparison")
-    let z = document.createElement("p");
-    let string =`Player total: ${playerTotal} Banker total: ${bankerTotal}`;
-    z.innerHTML=string;
+    z = document.createElement("p");
+    z.innerHTML=`Player total: ${playerTotal} Banker total: ${bankerTotal}`;
     // gameResults.append(z);
-
-
 
     // playerTotal = (pcard1.value + pcard2.value+ pnewcard.value)%10;
     // playerValue.innerHTML=`The player has a ${playerTotal}`;
@@ -222,7 +220,7 @@ dealbtn.addEventListener("click",function () {
         playerTotal = (pcard1.value + pcard2.value+ pnewcard.value)%10;
         playerValue.innerHTML=`The player has a ${playerTotal}`;
         // okprompt.innerHTML = "?";
-        // midel.append(okprompt);
+        midel.append(okprompt);
         gameResults.append(z);
     }    
     
@@ -238,7 +236,7 @@ dealbtn.addEventListener("click",function () {
         bankerTotal = (bcard1.value + bcard2.value+ bnewcard.value)%10;
         bankerValue.innerHTML=`The banker has a ${bankerTotal}`;
         // okprompt.innerHTML = "?";
-        // midel.append(okprompt);
+        midel.append(okprompt);
         gameResults.append(z);
     }
     // else if(playerTotal%10 <= 5){
