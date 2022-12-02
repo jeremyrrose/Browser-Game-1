@@ -4,7 +4,7 @@ const bluechipBTN = document.getElementById("blue"); // 5
 const greenchipBTN = document.getElementById("green"); // 25
 const redchipBTN = document.getElementById("red"); // 50 
 const blackchipBTN = document.getElementById("black"); //100
-let waggerinput=document.getElementById("amountwagered");
+let wagerinput=document.getElementById("amountwagered");
 
 blackchipBTN.addEventListener('click', function(){
     betamount(100);
@@ -24,9 +24,9 @@ redchipBTN.addEventListener('click', function(){
 // let y=null;
 function betamount(chipval){
     console.log("chip clicked:"+ chipval);
-    let x= parseInt(waggerinput.value);
-    waggerinput.value =  x+chipval;
-    y=waggerinput.value
+    let x= parseInt(wagerinput.value);
+    wagerinput.value =  x+chipval;
+    y=wagerinput.value
 }
 // function blackchipBTN(){
 // blackchipBTN.addEventListener('click',betamount(100));

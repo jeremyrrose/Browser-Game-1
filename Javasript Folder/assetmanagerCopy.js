@@ -150,13 +150,12 @@ dealbtn.addEventListener("click",function(){
     let playerTotal = (pcard1.value + pcard2.value)%10;
     let playerValue = document.getElementById("playerValueIndicator");
     playerValue.innerHTML=`The player has a ${playerTotal}`;
-    playerNatural();
+
     
     let bankerTotal = (bcard1.value + bcard2.value)%10;
     let bankerValue = document.getElementById("bankerValueIndicator");
     bankerValue.innerHTML=`The banker has a ${bankerTotal}`; 
 
-    bankerNatural();
 
     let gameResults=document.getElementById("scoreComparison")
     z = document.createElement("p");
@@ -190,6 +189,7 @@ dealbtn.addEventListener("click",function(){
         midel.append(okprompt);
         dealbtn.disabled = true;        
         gameResults.append(z);
+        playerNatural();
 // end of game because the player wins!
     }
     else if(bankerTotal == 8 || bankerTotal == 9){
@@ -199,6 +199,7 @@ dealbtn.addEventListener("click",function(){
         midel.append(okprompt);
         dealbtn.disabled = true;
         gameResults.append(z);
+        bankerNatural();
     }
     else if(bankerTotal == playerTotal){
         console.log("tie");
