@@ -10,8 +10,8 @@ let tieBet= document.getElementById("tieBet");
 let tieBetButton=document.getElementById("tieBetButton");
 tieBetButton.addEventListener('click',betOnTie)
 
-let clearAllButton=document.getElementById("clearAll");
-clearAllButton.addEventListener('click',resetBets)
+// let clearAllButton=document.getElementById("clearAll");
+// clearAllButton.addEventListener('click',resetBets)
 
 var betAmount=document.getElementById("amountWagered")
 
